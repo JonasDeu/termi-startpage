@@ -1,6 +1,16 @@
-function freshDates() {
+function init() {
 	const searchForm = document.getElementById("searchForm");
 	const searchField = document.getElementById("searchField");
+	searchField.addEventListener("keydown", event => {
+		if (event.key === "Enter") {
+			event.preventDefault();
+			searchForm.submit();
+		}
+	});
+	document.addEventListener("keydown", () => searchField.focus());
+}
+
+function freshDates() {
 	const time = document.getElementById("time");
 	const timeline = document.getElementById("timeline");
 
@@ -29,13 +39,8 @@ function freshDates() {
 	time.innerHTML =
 		"> " + hour.toString() + ":" + min.toString() + ":" + sec.toString();
 
-	searchField.addEventListener("keydown", event => {
-		if (event.key === "Enter") {
-			searchForm.submit();
-		}
-	});
-
 	setTimeout(freshDates, 1000);
 }
 
+init();
 freshDates();

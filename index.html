@@ -11,20 +11,33 @@
 	</head>
 
 	<body>
-		<div>
-			<span id="time"></span>
-			<br />
-			<span id="timeline"></span>
+		<div class="center">
+			<div>
+				<label>[JD@Desktop ~]$ Time</label>
+				<br />
+				<span id="time"></span>
+				<br />
+				<span id="timeline"></span>
+			</div>
+			<form
+				id="searchForm"
+				action="http://www.google.com/search?"
+				method="GET"
+				autocomplete="off"
+				autocorrect="off"
+				autocapitalize="off"
+				spellcheck="false"
+			>
+				<label>[JD@Desktop ~]$</label>
+				<textarea
+					name="q"
+					id="searchField"
+					type="text"
+					wrap="off"
+					autofocus
+				></textarea>
+			</form>
 		</div>
-		<form
-			id="searchForm"
-			action="http://www.google.com/search?"
-			method="GET"
-			autocomplete="off"
-		>
-			<label>Search</label>
-			<textarea name="q" id="searchField" type="text" autofocus></textarea>
-		</form>
 	</body>
 </html>
 
