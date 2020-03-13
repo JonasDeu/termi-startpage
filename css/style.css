@@ -1,4 +1,38 @@
 body {
+    margin-top: 20%;
     font-family: 'Roboto Mono', monospace;
     text-rendering: geometricPrecision;
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    background-color: #1D1F21;
+    color: #C5C8C6;
+    position: relative;
+    left: 50%;
+    float: left;
+}
+
+.center {
+    position: relative;
+    left: -50%;
+    float: left;
+}
+
+form {}
+
+label {
+    vertical-align: top;
+}
+
+textarea {
+    font-family: 'Roboto Mono', monospace;
+    color: #C5C8C6;
+    border: none;
+    background: none;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0.2rem 0 0 0;
+    height: 1.9rem;
 }
