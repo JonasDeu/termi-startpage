@@ -66,5 +66,41 @@ function freshDates() {
 	setTimeout(freshDates, 1000);
 }
 
+function links() {
+	const links = {
+		cat1: {
+			ele1: "ele1.com",
+			ele2: "www.element2.com",
+			ele3: "www.ele3.com"
+		},
+		cat2: {
+			ele1: "www.ele1.com",
+			ele2: "www.ele2.com",
+			ele3: "www.ele3.com",
+			ele4: "www.ele4.com"
+		}
+	};
+
+	const linksContainer = document.getElementById("linksContainer");
+
+	let outputString = "<ul>";
+	Object.entries(links).map(cat => {
+		console.log(cat);
+		outputString = outputString + "<li>> " + cat[0] + "</li><ul>";
+
+		Object.entries(cat[1]).map(ele => {
+			outputString = outputString + '<li><a href="' + ele[1] + '">hi</a></li>';
+			return null;
+		});
+		outputString = outputString + "</ul>";
+		return null;
+	});
+
+	outputString = outputString + "</ul>";
+
+	linksContainer.innerHTML = outputString;
+}
+
 init();
 freshDates();
+links();

@@ -1,5 +1,5 @@
 body {
-    margin-top: 20%;
+    margin-top: 15%;
     font-family: 'Ubuntu Mono', monospace;
     text-rendering: geometricPrecision;
     font-size: 1.3rem;
@@ -46,4 +46,63 @@ textarea {
     margin: 0;
     padding: 0.2rem 0 0 0;
     height: 1.8rem;
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+ul {
+    margin-top: -0.1rem;
+}
+
+ul ul {
+    height: 1.8rem;
+}
+
+ul ul li {
+    margin-right: 0.5rem;
+    list-style-type: none;
+    display: inline-block;
+    width: 8rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+ul ul li::before {
+    border-bottom: solid 1px white;
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1rem;
+    position: relative;
+    top: -0.3rem;
+    right: 0.3rem;
+}
+
+ul ul li:first-child {
+    margin-left: 1.5rem;
+}
+
+ul ul li:first-child::before {
+    border-left: solid 8px white;
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1rem;
+    position: relative;
+    top: -0.3rem;
+    right: 7px;
+}
+
+a {
+    color: #C5C8C6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(214, 7, 135);
+    transition: color 0.2s ease;
 }
