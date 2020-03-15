@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link
-			href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
+			href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap"
 			rel="stylesheet"
 		/>
 		<title>❤</title>
@@ -13,11 +13,17 @@
 	<body>
 		<div class="center">
 			<div>
-				<label>[JD@Desktop ~]$ Time</label>
-				<br />
-				<span id="time"></span>
-				<br />
-				<span id="timeline"></span>
+				<label
+					><span class="usernameColor">JD@Desktop</span>
+					<span class="tildeColor">~</span> % Time</label
+				>
+
+				<p id="time"></p>
+
+				<p id="timelineHour"></p>
+
+				<p id="timelineMin"></p>
+				<p id="timelineSec"></p>
 			</div>
 			<form
 				id="searchForm"
@@ -28,7 +34,10 @@
 				autocapitalize="off"
 				spellcheck="false"
 			>
-				<label>[JD@Desktop ~]$</label>
+				<label
+					><span class="usernameColor">JD@Desktop</span>
+					<span class="tildeColor">~</span> %
+				</label>
 				<textarea
 					name="q"
 					id="searchField"

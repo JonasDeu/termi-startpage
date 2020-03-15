@@ -12,18 +12,42 @@ function init() {
 
 function freshDates() {
 	const time = document.getElementById("time");
-	const timeline = document.getElementById("timeline");
+	const timelineHour = document.getElementById("timelineHour");
+	const timelineMin = document.getElementById("timelineMin");
+	const timelineSec = document.getElementById("timelineSec");
 
+	const timelineLength = 30;
 	const date = new Date();
 	let hour = date.getHours();
 	let min = date.getMinutes();
 	let sec = date.getSeconds();
 
-	timeline.innerHTML =
-		"> |" +
-		"-".repeat(hour * 2) +
-		(min < 30 ? "" : "-") +
-		"&nbsp".repeat((24 - hour) * 2) +
+	const hourLength = Math.floor((timelineLength / 24) * hour);
+	timelineHour.innerHTML =
+		"> hour&nbsp|" +
+		"-".repeat(hourLength) +
+		"&nbsp".repeat(timelineLength - hourLength) +
+		"|";
+	/*
+	"> |" +
+	"-".repeat(hour * 2) +
+	(min < 30 ? "" : "-") +
+	"&nbsp".repeat((24 - hour) * 2 - 1) +
+	"|";
+	*/
+
+	const minLength = Math.floor((timelineLength / 60) * min);
+	timelineMin.innerHTML =
+		"> min&nbsp&nbsp|" +
+		"-".repeat(minLength) +
+		"&nbsp".repeat(timelineLength - minLength) +
+		"|";
+
+	const secLength = Math.ceil((timelineLength / 60) * sec);
+	timelineSec.innerHTML =
+		"> sec&nbsp&nbsp|" +
+		"-".repeat(secLength) +
+		"&nbsp".repeat(timelineLength - secLength) +
 		"|";
 
 	if (hour < 10) {
