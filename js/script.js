@@ -68,16 +68,16 @@ function freshDates() {
 
 function links() {
 	const links = {
-		cat1: {
-			ele1: "ele1.com",
-			ele2: "www.element2.com",
-			ele3: "www.ele3.com"
+		Reddit: {
+			ele1: ["r/webdev", "https://www.reddit.com/r/webdev/"],
+			ele2: ["r/climbing", "https://www.reddit.com/r/climbing/"],
+			ele3: ["r/de", "https://www.reddit.com/r/de/"]
 		},
-		cat2: {
-			ele1: "www.ele1.com",
-			ele2: "www.ele2.com",
-			ele3: "www.ele3.com",
-			ele4: "www.ele4.com"
+		Misc: {
+			ele1: ["Youtube", "ele1.com"],
+			ele2: ["GMail", "ele1.com"],
+			ele3: ["Drive", "ele1.com"],
+			ele4: ["Calendar", "ele1.com"]
 		}
 	};
 
@@ -89,7 +89,13 @@ function links() {
 		outputString = outputString + "<li>> " + cat[0] + "</li><ul>";
 
 		Object.entries(cat[1]).map(ele => {
-			outputString = outputString + '<li><a href="' + ele[1] + '">hi</a></li>';
+			outputString =
+				outputString +
+				'<li><a href="' +
+				ele[1][1] +
+				'">' +
+				ele[1][0] +
+				"</a></li>";
 			return null;
 		});
 		outputString = outputString + "</ul>";
