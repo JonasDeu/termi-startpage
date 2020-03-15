@@ -1,11 +1,19 @@
+:root {
+    --main-bg-color: #1D1F21;
+    --main-txt-color: #C5C8C6;
+    --color-1: rgb(214, 7, 135);
+    --color-2: aqua;
+    --color-3: #3465a4;
+}
+
 body {
     margin-top: 15%;
     font-family: 'Ubuntu Mono', monospace;
     text-rendering: geometricPrecision;
     font-size: 1.3rem;
     line-height: 1.8rem;
-    background-color: #1D1F21;
-    color: #C5C8C6;
+    background-color: var(--main-bg-color);
+    color: var(--main-txt-color);
     position: relative;
     left: 50%;
     float: left;
@@ -22,12 +30,20 @@ p {
     padding-top: -5px;
 }
 
-.usernameColor {
-    background-color: #3465a4;
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
 }
 
-.tildeColor {
-    color: aqua;
+a {
+    color: var(--main-txt-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-1);
+    transition: color 0.2s ease;
 }
 
 label {
@@ -36,7 +52,7 @@ label {
 
 textarea {
     font-family: 'Ubuntu Mono', monospace;
-    color: #C5C8C6;
+    color: var(--main-txt-color);
     border: none;
     background: none;
     outline: none;
@@ -48,11 +64,15 @@ textarea {
     height: 1.8rem;
 }
 
-ul, li {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+.tildeColor {
+    color: var(--color-2);
 }
+
+.usernameColor {
+    background-color: var(--color-3);
+}
+
+/*Link Module*/
 
 ul {
     margin-top: -0.1rem;
@@ -72,7 +92,7 @@ ul ul li {
 }
 
 ul ul li::before {
-    border-bottom: solid 1px white;
+    border-bottom: solid 1px var(--main-txt-color);
     content: "";
     display: inline-block;
     width: 1.5rem;
@@ -87,7 +107,7 @@ ul ul li:first-child {
 }
 
 ul ul li:first-child::before {
-    border-left: solid 8px white;
+    border-left: solid 8px var(--main-txt-color);
     content: "";
     display: inline-block;
     width: 1.5rem;
@@ -97,12 +117,4 @@ ul ul li:first-child::before {
     right: 7px;
 }
 
-a {
-    color: #C5C8C6;
-    text-decoration: none;
-}
-
-a:hover {
-    color: rgb(214, 7, 135);
-    transition: color 0.2s ease;
-}
+/*END Link Module/*
