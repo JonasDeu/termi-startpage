@@ -24,7 +24,7 @@ function freshDates() {
 
 	const hourLength = Math.floor((timelineLength / 24) * hour);
 	timelineHour.innerHTML =
-		"> hour&nbsp|" +
+		"> h&nbsp|" +
 		"-".repeat(hourLength) +
 		"&nbsp".repeat(timelineLength - hourLength) +
 		"|";
@@ -38,14 +38,14 @@ function freshDates() {
 
 	const minLength = Math.floor((timelineLength / 60) * min);
 	timelineMin.innerHTML =
-		"> min&nbsp&nbsp|" +
+		"> m&nbsp|" +
 		"-".repeat(minLength) +
 		"&nbsp".repeat(timelineLength - minLength) +
 		"|";
 
 	const secLength = Math.ceil((timelineLength / 60) * sec);
 	timelineSec.innerHTML =
-		"> sec&nbsp&nbsp|" +
+		"> s&nbsp|" +
 		"-".repeat(secLength) +
 		"&nbsp".repeat(timelineLength - secLength) +
 		"|";
@@ -67,43 +67,32 @@ function freshDates() {
 }
 
 function links() {
+	const linksContainer = document.getElementById("linksContainer");
 	const links = {
 		Reddit: {
-			ele1: ["r/webdev", "https://www.reddit.com/r/webdev/"],
-			ele2: ["r/climbing", "https://www.reddit.com/r/climbing/"],
-			ele3: ["r/de", "https://www.reddit.com/r/de/"]
+			"r/webdev": "https://www.reddit.com/r/webdev/",
+			"r/climbing": "https://www.reddit.com/r/climbing/",
+			"r/de": "https://www.reddit.com/r/de/"
 		},
 		Misc: {
-			ele1: ["Youtube", "ele1.com"],
-			ele2: ["GMail", "ele1.com"],
-			ele3: ["Drive", "ele1.com"],
-			ele4: ["Calendar", "ele1.com"]
+			Youtube: "https://www.youtube.com/",
+			GMail: "https://mail.google.com/",
+			GDrive: "https://drive.google.com/drive/my-drive",
+			GCalendar: "https://calendar.google.com/calendar"
 		}
 	};
 
-	const linksContainer = document.getElementById("linksContainer");
-
 	let outputString = "<ul>";
-	Object.entries(links).map(cat => {
-		console.log(cat);
+	Object.entries(links).forEach(cat => {
 		outputString = outputString + "<li>> " + cat[0] + "</li><ul>";
-
-		Object.entries(cat[1]).map(ele => {
+		Object.entries(cat[1]).forEach(ele => {
 			outputString =
-				outputString +
-				'<li><a href="' +
-				ele[1][1] +
-				'">' +
-				ele[1][0] +
-				"</a></li>";
-			return null;
+				outputString + '<li><a href="' + ele[1] + '">' + ele[0] + "</a></li>";
 		});
 		outputString = outputString + "</ul>";
-		return null;
 	});
 
 	outputString = outputString + "</ul>";
-
 	linksContainer.innerHTML = outputString;
 }
 
